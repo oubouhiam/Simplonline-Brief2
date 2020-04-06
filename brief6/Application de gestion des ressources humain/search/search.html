@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>search</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!--
+			Google Font
+			============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+	<link rel="stylesheet" href="../css/linearicons.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/magnific-popup.css">
+	<link rel="stylesheet" href="../css/nice-select.css">
+	<link rel="stylesheet" href="../css/owl.carousel.css">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="search.html"><img src="img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-has-children"><a href="/index">salarie</a>
+						<li class="menu-has-children"><a href="">Mohamed</a>
+							<ul>
+								<li><a href="#">Compte</a></li>
+								<li><a href="#"> Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+
+	<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<h1 class="wow fadeIn" data-wow-duration="4s">Welcome to the customer <br> search page</h1>
+					<div class="input-wrap">
+						<form action="" class="form-box d-flex justify-content-between">
+							<input type="search" placeholder="Search Cusomer" class="form-control" name="username" id="search">
+							<!-- <button type="submit" class="btn search-btn">Search</button> -->
+						</form>
+					</div>
+					<table class="table table-streped tabe-bordered table-hover" id="table_data">
+						<thead>
+							<tr>								
+								<th>Matricule</th>
+								<th>id</th>
+								<th>nom</th>
+								<th>prenom</th>
+								<th>age</th>
+								<th>salaire</th>
+							</tr>
+						</thead>
+					</table>
+					<tbody>
+					</tbody>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- Start Footer Area -->
+	<footer class="footer-area section-gap">
+		<div class="container"></div>
+			<div class="footer-bottom row align-items-center" style="background: #283367;">
+				<p class="footer-text m-0 col-lg-8 col-md-12">
+					Copyright &copy; All rights reserved
+				</p>
+				<div class="col-lg-4 col-md-12 footer-social">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-dribbble"></i></a>
+					<a href="#"><i class="fa fa-behance"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer Area -->
+	<script src="https://kit.fontawesome.com/c2035ffa68.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<!-- <script src="../js/vendor/bootstrap.min.js"></script> -->
+	<script src="../main.js"></script>
+	<script>
+		$(document).ready(function(){   
+    // $('#search').keydown(function(){
+        $.ajax({method:'GET',
+    url:'http://localhost:3000/salarie',succes:function(data){
+            // var search = $('#search').val();
+            // var regex = new RegExp(search, 'i');
+            var output = '';
+            console.log('hello2');
+            /*$.each(data, function(key, val){
+                // if((val.id.search(regex) != -1) || (val.nom.search(regex) != -1) ){
+                    output += "<tr>";
+                    output += "<td id='"+key+"'>"+val.Matricule+"</td>";
+                    output += "<td id='"+key+"'>"+val.id+"<td>";
+                    output += "<td id='"+key+"'>"+val.nom+"</td>";
+                    output += "<td id='"+key+"'>"+val.Prenom+"</td>";
+                    output += "<td id='"+key+"'>"+val.Age+"</td>";
+                    output += "<td id='"+key+"'>"+val.salaire+"</td>";
+                    output += "</tr>";
+                // }
+            });*/
+            $('#table_data').append(output);
+            console.log('tbody')
+        }
+		});
+	});
+	</script>
+</body>
+
+</html>

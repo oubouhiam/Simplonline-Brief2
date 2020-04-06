@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous"
+  >
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">entreprise</h1>
+
+		
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Titre</th>
+				
+					<th scope="col">local</th>
+					<th scope="col">Description</th>
+			
+				</tr>
+			</thead>
+			<tbody>
+				<% data.forEach(d => { %>
+					<tr>
+						<th scope="row"><%= d.ID %></th>
+						<td><%= d.Title %></td>
+						<td><%= d.Country %></td>
+						<td><%= d.local %></td>
+						<td><%= d.desc %></td>
+						<td>
+							<a href="/edit/<%= d.ID %>" style="color: white">
+				                <button type="button" class="btn btn-success" style="background-color: blue;">
+								modifier
+                </button>
+              </a>
+							<a href="/delete/<%= d.ID %>" style="color: white "  onclick="return confirm('are u sure ?')">
+                <button type="button" class="btn btn-danger" style="background-color: blue;">
+                  Supprimer
+                </button>
+			  </a>
+
+						</td>
+						<td>
+							<button  style="margin-bottom: 30px;" class="btn btn-info"><a href="/departement/<%= d.Title %>/<%=d.ID%>" style='color: white; text-decoration: none;' onclick="return confirm('Your welcome <%=d.Title%>?')">Show Departement</a></button>
+						</td>
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+		<a href="/add" class="btn btn-primary">ajouter</a>
+	</div>
+</body>
+</html>

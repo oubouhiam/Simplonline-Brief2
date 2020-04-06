@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.blank-div{
+  width: 100%;
+  height: 50px;
+}
+#company-new{
+	text-align: center;
+	display: none;
+}
+#company-new form input{
+	width: 30%;
+    border: none;
+    margin: 10px;
+
+}
+#section2{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 900px){
+#section2{
+  flex-direction: column;
+  position: relative;
+  width: 200%;
+  left: 26%;
+}
+}
+#section2 h1{
+  font-family: serif;
+   ;
+    color: black;
+    padding: 11px;
+    font-size: 25px;
+}
+#section2 #first{
+
+width: 24%;
+text-align: center;
+margin-top: 18px;
+}
+#section2 #first div img:first-child{
+  width: 100%;
+}
+.deps{
+	margin: 20px;
+    
+  
+}
+
+	</style>
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous"
+  >
+</head>
+<body>
+	<% if(locals.error){%><h1 id="title-hear" class="error"> </h1> <%}%>
+	<h1 id="title-hear" style="text-align: center;font-family: initial;"> 
+		 Entreprises <% if(locals.entreprise ){%><%=entreprise%> <%}%></h1>
+	<section id="section2">
+		<% if(locals.list){%>
+		<% for(var i of list){%>
+			<% if(i.ID==ID){%>
+			<div id="first">
+				<div>
+			
+			  </div>
+					<h1 class="title" id="title">
+					  <%=i.Nom%>
+					</h1>
+					<div id="dep" class="deps">
+							<div class="childs" id="child1">
+							   <p> Chef Département :   <span class="spans"> <%=i.chef_département%> </span></p>
+							   <p> description :   <span class="spans"> <%=i.description%> </span></p>
+							   <button  style="margin-bottom: 30px;" class="btn btn-info"><a href="/salarie/<%=i.Nom%>/<%=i.idmatricule%>" style='color: white; text-decoration: none;' onclick="return confirm('Your welcome <%=i.nom%>?')">Salarie</a></button>
+							</div>
+						</div>
+				</div>
+				<%}%>
+			<%}%>
+			<%}%>
+	</section>
+</div>
+
+<div class="blank-div"></div>
+	<div class="container">
+		<div class="blank-div"></div>
+		<div style="text-align: center;"><button type="button"  id="company" class="btn btn-primary" id="fixed"> ajouter Departement</button></div>
+		<div class="blank-div"></div>
+		<div id="company-new">
+			<div id="inner-company-new">
+			<form  action="/addDepartement" method="POST">
+				<input type="text" id="Nom" name="Nom" placeholder="Nom"><br>
+				<input type="text" id="entreprise" name="entreprise" value="<%=entreprise%>" readonly><br>
+				<input type="number" id="ID" name="ID" value="<%=ID%>" readonly><br>
+				<input type="text" id="chef_département" name="chef_département" placeholder="chef_département" id="inputs-size">* <br>
+				<input type="text" id="description" name="description" placeholder="description">* <br>
+				<button id="btn-company" class="btn btn-info" onclick="this.style.backgroundColor='green'"> Add departement</button>
+			  </form>
+		</div>
+	</div>
+		<div class="blank-div"></div>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+  $('#company').click(function(){
+  $('#company-new').slideToggle(1000);
+  });
+  $('#info').click(function(){
+      $('.childs').slideToggle(1000);
+      $(this).text('Hide').click(function(){
+          if($(this).text()==='Hide'){
+$(this).text('show');
+          }
+else{
+  $(this).text('Hide');
+}
+      });
+  });
+});
+
+
+		</script>
+</body>
+</html>

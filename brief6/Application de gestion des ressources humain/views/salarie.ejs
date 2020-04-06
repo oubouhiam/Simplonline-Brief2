@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+
+.navbar-b {
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-top: 1.563rem;
+    padding-bottom: 1.563rem;
+    background: rgba(0, 0, 0, 0.7);
+}
+.navbar-b .navbar-brand {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.navbar-b.navbar-trans .nav-link:hover {
+    color: #fff;
+}
+
+.navbar-b.navbar-trans .nav-link, .navbar-b.navbar-reduce .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navbar-b.navbar-trans .nav-link:before {
+    background-color: #fff;
+}
+
+		.blank-div{
+  width: 100%;
+  height: 50px;
+}
+#company-new{
+	text-align: center;
+	display: none;
+}
+#company-new form input{
+	width: 30%;
+    border: none;
+    margin: 10px;
+
+}
+#section2{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 900px){
+#section2{
+  flex-direction: column;
+  position: relative;
+  width: 200%;
+  left: 26%;
+}
+}
+#section2 h1{
+  font-family: serif;
+   
+    padding: 11px;
+    font-size: 25px;
+}
+#section2 #first{
+box-shadow: 5px 11px 25px;
+width: 24%;
+text-align: center;
+margin-top: 18px;
+}
+#section2 #first div img:first-child{
+  width: 100%;
+}
+
+.deps{
+	margin: 20px;
+    box-shadow: grey 2px 8px 7px;
+    background-color: rgba(250, 235, 215, 0.36);
+}
+.error{
+	color: #ff0000d9;
+    text-align: center;
+    padding: 10px;
+
+    font-family: inherit;
+   
+    
+}
+.divs{
+    flex-basis: 25%;
+    padding: 2%;
+    background: linear-gradient(60deg, gray, blue );
+    box-shadow: 9px 8px 9px grey;
+    margin: 20px;
+    display: grid;
+    font-family: monospace;
+    color: antiquewhite;
+}
+#salarie {
+    width: 45%;
+    margin: 20px;
+}
+
+#title {
+    font-size: 15px;
+    font-family: fantasy;
+    letter-spacing: 1.4px;
+    text-shadow: 0px 5px 7px black;
+}
+#infor {
+    font-size: 12px;
+    margin-top: 30px;
+}
+.spans{
+font-weight: bold;
+    text-decoration: underline;
+}
+	</style>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous"
+  >
+</head>
+<body>
+  <nav class="navbar-b">
+    <a href="/search" class="link" style="margin-left: 20px;">recherch</a>
+  </nav>
+	<% if(locals.text){%><h1 id="title-hear" class="error"> </h1> <%}%>
+	<h1 id="title-hear" style="text-align: center;font-family: initial;"> 
+		 Departement <% if(locals.departement ){%><%=departement%> <%}%></h1>
+	<section id="section2">
+		<% if(locals.list1){%>
+		<% for(var i of list1){%>
+			<% if(i.Matricule==Matricule){%>
+			<div class="divs">
+				
+					<h1 class="title" id="title">
+                      
+					 
+					</h1>
+					<div id="#infor">
+							<div class="childs" id="child1">
+                                <p> Nom :   <span class="spans nomMatricule"> <%=i.nom%></span></p>
+							   <p> Prenom :   <span class="spans"> <%=i.Prenom%> </span></p>
+                               <p> Age :   <span class="spans"> <%=i.Age%> </span></p>
+                               <p> salaire :   <span class="spans"> <%=i.salaire%> </span></p>
+							</div>
+						</div>
+				</div>
+				<%}%>
+			<%}%>
+			<%}%>
+	</section>
+</div>
+
+<div class="blank-div"></div>
+	<div class="container">
+		<div class="blank-div"></div>
+		<div style="text-align: center;"><button type="button"  id="company" class="btn btn-primary" id="fixed"> ajouter Salarie</button></div>
+		<div class="blank-div"></div>
+		<div id="company-new">
+			<div id="inner-company-new">
+			<form  action="/addSalarie" method="POST">
+				<input type="text" id="nom" name="nom" placeholder="nom"><br>
+				<input type="text" id="departement" name="departement" value="<%=departement%>" readonly><br>
+				<input type="number" id="Matricule" name="Matricule" value="<%=Matricule%>" readonly><br>
+				<input type="text" id="Prenom" name="Prenom" placeholder="Prenom" id="inputs-size">* <br>
+                <input type="text" id="Age" name="Age" placeholder="Age">* <br>
+                <input type="text" name="salaire" placeholder="Salaire"  id="salaire">*<br>
+				<button id="btn-company" class="btn btn-info" onclick="this.style.backgroundColor='green'"> Ajouter  Salarie</button>
+			  </form>
+		</div>
+	</div>
+		<div class="blank-div"></div>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+  $('#company').click(function(){
+  $('#company-new').slideToggle(1000);
+  });
+  $('#info').click(function(){
+      $('.childs').slideToggle(1000);
+      $(this).text('Hide').click(function(){
+          if($(this).text()==='Hide'){
+$(this).text('show');
+          }
+else{
+  $(this).text('Hide');
+}
+      });
+  });
+
+
+//recherch Employe
+$(function(){
+$('#recherche-Employee').keyup(function (){
+             var NomSalarie =$('.nomMatricule');
+           //  console.log($('.nomMatricule').innerText);
+            var recherch=$('#recherche-Employee');
+             //console.log(NomSalarie.length);
+            for(var i=0; i<NomSalarie.length;i++){
+            if(recherch.val()===NomSalarie[i].innerText){
+              $(NomSalarie[i]).parents('.divs').css("box-shadow","0px 0px 20px yellow");
+              $(NomSalarie[i]).parents('.divs').css("flex-basis","29%");
+               $("#recherche-Employee").val('');
+            }else{
+                $(NomSalarie[i]).parents('.divs').css("box-shadow","9px 8px 9px grey");
+                $(NomSalarie[i]).parents('.divs').css("flex-basis","25%");
+            }
+        }
+    });
+
+});
+            });
+
+		</script>
+</body>
+</html>
