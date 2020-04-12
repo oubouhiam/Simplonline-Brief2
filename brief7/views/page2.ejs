@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet'
+    type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><img src="logo.png" width="120" height="60" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/page2">update</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <%if ( typeof Bus != 'undefined' ) { %>
+  <div class="col-12 d-flex justify-content-center" style="margin-top: 10px;">
+
+    <h2> update/Delete</h2>
+  </div>
+  <div class="container" style="margin-top: 10px;">
+    <div class="row">
+      <div class="col-10 " style="position:relative;left:100px">
+        <form method="POST" class="form-group">
+          <label>Bus Photo</label><input class="form-control" type="file" value="<%=Bus.BusPic%>" name="BusPic" required>
+          <label>Bus Name</label><input class="form-control" type="text" value="<%=Bus.BusName%>" name="BusName" required>
+          <label>Direction</label><input class="form-control" type="text" value="<%=Bus.Direction%>" name="Direction"required>
+          <label>Date</label><input class="form-control" type="date" value="<%=Bus.Date%>" name="Date" required>
+          <label>Time</label><input class="form-control" type="time" name="Time" value="<%=Bus.Time%>" required>
+          <label>Price</label><input class="form-control" type="text" name="Price" value="<%=Bus.Price%>" required>
+          <div class="col-12 d-flex justify-content-center" style="margin-top: 10px;">
+            <button class="btn btn-info" type="submit"
+              formaction="/update?Bus2=<%=Bus.Bus%>&Direction=<%=Bus.Direction%>">update</button>&nbsp;
+            <button class="btn btn-info" type="submit"
+              formaction="/delete?Bus3=<%=Bus.Bus%>&Direction=<%=Bus.Direction%>">Delete</button>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+    <!--row-->
+
+  </div>
+  <!--container-->
+  <%}%>
+      <div class="container">
+        <div class="footer_trust_top">
+          <p>our services</p>
+          <div class="trustlogos">
+            <a href="#"><img src="https://i.ibb.co/2MRZDnf/bannercar.png" alt="bannercar" border="0" class="bannercar"></a>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 footer_main">
+          <div class="col-xs-5 col-md-3 footer-left">
+            <h4>Find Out More</h4>
+            <ul class="footer_list">
+              <li><a href="">home</a></li>
+              <li><a href="">update</a></li>
+            </ul>
+          </div>
+      
+          <div class="col-xs-7 col-md-3 col-md-push-6 footer-right">
+            <div class="footerbox">
+              <h4>Contact Us</h4>
+              <p>We're ready to help!</p>
+              <ul class="footer_list">
+                <li>maroc</li>
+                <li class="phone">+1 555 555 5555</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-xs-12 col-md-6 col-md-pull-3 footer_middle">
+            <h4>Be the first to know about Authentic Travel Deals</h4>
+            <p>Subscribe to get exclusive offers on the world’s greatest vacations.</p>
+      
+            <form class="hero-cta__form">
+              <div class="elcontainer">
+                <div class="inner-wrap submit-container">
+                  <div class="hero-cta__input-wrap"> <input type="email" name="data[email]" required="" id="hero-cta-email" placeholder="Enter Your Email Address"></div> <button type="submit" class="emailsignup">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      
+        <div class="footer_bottom">
+          <div class="col-lg-3 col-md-12 footer_copyright">
+            <p>©2020 #STAY AT HOME</p>
+          </div>
+    
+</body>
+</html>
