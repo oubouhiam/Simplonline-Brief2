@@ -1,65 +1,27 @@
 {
   "Bus": [
     {
-      "Bus": "satas.jpg",
-      "Direction": "AGADIR",
-      "Date": "2020-04-12",
-      "Time": "03:03",
-      "Price": "44",
-      "BusName": "Ctm",
-      "BusPic": "ctm.JPG"
+      "BusPic": "obal.jfif",
+      "BusName": "OBAL",
+      "Direction": "ELJADIDA",
+      "Date": "2020-04-15",
+      "Time": "06:06",
+      "Price": "70DH"
     },
     {
-      "BusName": "satas",
-      "Direction": "agadir",
-      "Date": "2020-04-19",
-      "Time": "22:22",
-      "Price": "33"
-    },
-    {
-      "BusName": "ghazala",
+      "BusPic": "satas.JPG",
+      "BusName": "SATAS",
       "Direction": "marrakesh",
-      "Date": "2020-04-16",
-      "Time": "22:02",
-      "Price": "20"
-    },
-    {
-      "BusName": "GHAZALA",
-      "Direction": "AGADIR",
-      "Date": "2020-04-17",
-      "Time": "05:55",
-      "Price": "77"
-    },
-    {
-      "BusPic": "IMG_3014.JPG",
-      "BusName": "SUPRATOUR",
-      "Direction": "TIZNIT",
-      "Date": "2020-04-16",
-      "Time": "02:30",
+      "Date": "2020-04-23",
+      "Time": "03:04",
       "Price": "120 DH"
     },
     {
-      "BusPic": "IMG_3013.JPG",
+      "BusPic": "ctm.JPG",
       "BusName": "CTM",
       "Direction": "AGADIR",
       "Date": "2020-04-17",
-      "Time": "12:30",
-      "Price": "44"
-    },
-    {
-      "BusPic": "ctm.JPG",
-      "BusName": "ggggggg",
-      "Direction": "gggjgh",
-      "Date": "2020-04-17",
-      "Time": "03:33",
-      "Price": "44"
-    },
-    {
-      "BusPic": "obal.jfif",
-      "BusName": "obal",
-      "Direction": "agadir",
-      "Date": "2020-04-17",
-      "Time": "20:30",
+      "Time": "09:05",
       "Price": "80DH"
     }
   ]
