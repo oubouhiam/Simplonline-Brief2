@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $(document).ready(function(){
         $.ajax({method:'GET',
     url:'http://localhost:3000/salarie',success:function(data){
             var output = [];
@@ -15,11 +14,10 @@ $(document).ready(function(){
 				});
         }
 		});
-	});
         $('#search').on("keyup", function(){
             var value = $('#search').val().toLowerCase();
             $("#table_data tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-        })
-});
+ })
+})

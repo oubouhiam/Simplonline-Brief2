@@ -51,9 +51,12 @@ app.get('/', (req, res) => {
 	res.render('login');
 });
 app.get('/search', (req, res) => {
-	console.log('hhhbbbb');
+	// console.log('hhhbbbb');
 	res.sendFile(path.join(__dirname,'./search/search.html'));
 });
+app.get('/salarie',(req,resp)=>{
+	resp.end(JSON.stringify(list1));
+	});
 app.get('/file', (req, res) => {
 	console.log('hhhbbbb');
 	res.sendFile(path.join(__dirname,'./fileTester.html'));
@@ -177,9 +180,7 @@ app.post('/addDepartement',function(req,resp){
 });
 
 //salarie
-app.get('/salarie',(req,resp)=>{
-resp.end(JSON.stringify(list1));
-});
+
 app.get('/salarie/:Nom/:Matricule',(req,resp)=>{
 	var {Nom}= req.params;
 	var {Matricule}=req.params;
