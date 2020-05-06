@@ -1,3 +1,4 @@
+CREATE DATABASE brief3;
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
