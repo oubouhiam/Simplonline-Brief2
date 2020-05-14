@@ -1,0 +1,74 @@
+.ticket{
+background-color: rgba(255, 197, 125, 0.442);
+width: 60%;
+height: 400px;
+display: flex;
+}
+.volinfos1{
+    width: 70%;
+    height: auto;
+    border-right: black dashed;
+}
+.ticket_headrer{
+    height: 80px;
+    background-color: rgb(88, 247, 255);
+    display: flex;
+    width: 100%;
+}
+.ticket_headrer .logoticket{
+    width: 130px;
+    height: 75px;
+}
+.ticket_headrer .idreservationn{
+    font-size: 30px;
+    float: right;
+    width: 70%;
+    text-align: end;
+    margin-top: 6px;
+}
+.ticket_body{
+    display: flex;
+}
+.barcod{
+    width: 50%;
+}
+.barcode{
+    width: 100px;
+    height: 200px;
+    padding: 40px 30px;
+}
+.clientinfos{
+    display: flex;
+    padding: 10px 10px;
+}
+.infos1{
+    width: 50%;
+    text-align: left;
+}
+.infos2{
+    width: 50%;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.barcode2{
+    width: 70px;
+    height: 40px;
+}

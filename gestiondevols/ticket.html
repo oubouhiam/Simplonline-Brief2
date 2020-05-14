@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/ticket.css">
+</head>
+<body>
+    <section>
+        <div class="ticket">
+            <div class="volinfos1">
+                <div class="ticket_headrer">
+                    <img class="logoticket" src="/img/logo.png" alt="">
+                    <h1 class="idreservationn">Confirmation <br>
+                        Reservation N': </h1>
+                </div>
+                <div class="ticket_body">
+                    <div class="barcod">
+                        <img class="barcode" src="/img/barcode.jpg" alt="">
+                    </div>
+                    <div class="infos">
+                        <div class="clientinfos">
+                            <div class="infos1">
+                                <h5 class="card-title">Nom : <?= $row1['Nom']; ?></h5>
+                                <h5 class="card-title">Email : <?= $row1['Email']; ?></h5>
+                                <h5 class="card-title">Phone : <?= $row1['PhoneNumber']; ?></h5>
+                            </div>
+                            <div class="infos2">
+                                <h5 class="card-title">Date Time : <?= $row2['Date']; ?></h5>
+                                <h5 class="card-title">Nombre de Place : <?= $row2['NombrePlace']; ?></h5>
+                                <h5 class="card-title">Prix   : <?= $row2['Prix']; ?></h5>
+                            </div>
+                        </div>
+                        <div class="from_to">
+                            <h5 class="card-title">Depart : <?= $row2['Depart']; ?></h5>
+                            <a href=""><i class="fas fa-plane-departure"></i></a>
+                            <h5 class="card-title">Destination : <?= $row2['Destination']; ?></h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ticket_footer">
+
+                </div>
+
+            </div>
+            <div class="volinfos2">
+                <div class="ticket_headrer2">
+                    <h1 class="idreservation2">Reservation N': </h1>
+                </div>
+                <div class="ticket_body2">
+                    <div class="smalinfos">
+                        <h6 class="card-title">Nom : <?= $row1['Nom']; ?></h6>
+                        <h6 class="card-title">Email : <?= $row1['Email']; ?></h6>
+                        <h6 class="card-title">Phone : <?= $row1['PhoneNumber']; ?></h6>
+                        <h6 class="card-title">Depart : <?= $row2['Depart']; ?></h5>
+                        <h6 class="card-title">Destination : <?= $row2['Destination']; ?></h6>
+                        <h6 class="card-title">Date Time : <?= $row2['Date']; ?></h6>
+                        <h6 class="card-title">Nombre de Place : <?= $row2['NombrePlace']; ?></h6>
+                        <h6 class="card-title">Prix   : <?= $row2['Prix']; ?></h6>
+                    </div>
+                    <div>
+                        <img class="barcode2" src="/img/smalbarcode.jpg" alt="">
+                    </div>
+                </div>
+                <div class="ticket_footer2">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
