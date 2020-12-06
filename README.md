@@ -6,4 +6,4 @@ Brief 7 : Creation d'un applicatin de gestion du Gare de voyage
 
 Brief 8 : Creation d'n diagramme de classe et base de donnée MySql
 
-WordpressBrief : Creation d'un copie de site 
+WordpressBrief : Creation d'un copie de site https://www.smartchameleon.top
